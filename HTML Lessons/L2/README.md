@@ -68,7 +68,7 @@ The text inside a `<pre>` element is displayed in a fixed-width font (usually Co
      spaces
 </pre>
 
-## HTML Horizontal Rules `<hr />`
+## HTML Horizontal Line `<hr />`
 The `<hr />` tag defines a thematic break in an HTML page, and is most often displayed as a horizontal rule.
 
 ```html
