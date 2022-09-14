@@ -33,7 +33,7 @@ So, an inline style has the highest priority, and will override external and int
 ### CSS Comments
 Comments are used to explain the code, and may help when you edit the source code at a later date.
 Comments are ignored by browsers.
-A CSS comment is placed inside the <style> element, and starts with /* and ends with */:
+A CSS comment is placed inside the `<style>` element, and starts with /* and ends with */
 
 
 ### Linking CSS File to HTML file

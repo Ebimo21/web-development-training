@@ -188,7 +188,7 @@ let qCount = 0
 let currentQuestion = 0;
 
 const user = [{
-    score: 1,
+    score: 0,
 }];
 
 const model = {
