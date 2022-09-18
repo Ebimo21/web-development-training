@@ -8,21 +8,41 @@
     <title>Document</title>
 </head>
 <body>
+    <h1>Sample Form</h1>
+    <form action="https://getform.io/f/5bcff75b-bbe2-490b-9cb2-b47053bca5a8" method="POST">
+        <label for="name">Full Name:</label>
+        <input type="text" name="name">
 
-    <a title="hhkjhkj" href="about.html">Visit google</a>
-    <h1>
-        How A Website Works: A Simple Guide
-    </h1>
-    <p>this a paragraph</p>
-    
-    <div>
-        <p>ghk</p>
+        <label for="email">Email:</label>
+        <input type="email" name="email">
+
+        <label for="message">Message:</label>
+        <input type="text" name="message">
+
+        <!-- checkbox handle --> 
+        <label for="subscribe">Subscribe:</label>
+        <input type="checkbox" name="subscribe" value="yes" checked>
+        <input type="hidden" name="subscribe" value="no">
 
 
-    </div>
+        <!-- radio button handle --> 
+        <label for="gender">Gender:</label>
+        <label for="gender">Male</label>
+        <input type="radio" name="gender" value="male" checked>
+        <label for="gender">Female</label>
+        <input type="radio" name="gender" value="female">
+        <label for="gender">Others</label>
+        <input type="radio" name="gender" value="other">
 
-    <p>Don't speak tech? It's ok. But, you should still know how a website works so you don't get hoodwinked on your next project.</p>
-    <p>Everybody knows what a website is.  We click the little blue letters, we Google the things, type in the www-dot-something-or-other and then you’re looking at cat pictures. That’s how a website works, right?</p>
-    <p>Considering it’s something almost all of us use daily, for many of us the internet can still be a bit of a mystery. A few years ago, our public officials were still referring to it as a “series of tubes.” And there’s so much jargon thrown around, it’s hard to know which way is up sometimes.</p>
+
+        <!-- select field handle --> 
+        <label for="work-experience">Work Experience:</label>
+        <select name="work-experience">
+            <option value="one-year">0-1 years</option>
+            <option value="one-five-years">1-5 years</option>
+            <option value="five-plus-years">5+ years</option>
+        </select>
+        <button type="submit">Send</button>
+    </form>
 </body>
 </html>

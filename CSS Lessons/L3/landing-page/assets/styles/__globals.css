@@ -1,0 +1,33 @@
+/* global styling --start */
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: sans-serif;
+    font-size: 1.6rem;
+}
+
+p{
+    font-size: 1.6rem;
+    line-height: 2.6rem;
+}
+
+img{
+    max-width: 100%;
+}
+
+a{
+    text-decoration: none;
+}
+
+button{
+    padding: 1.6rem 2.4rem;
+    border-radius: .8rem;
+    border: 1px solid var(--primary);
+    cursor: pointer;
+    height: 4.6rem;
+    max-width: 21.6rem;
+}
+
+/* global styling --end */

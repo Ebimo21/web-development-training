@@ -1,0 +1,29 @@
+.flex-container > div {
+  background-color: #f1f1f1;
+  margin: 10px;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.flex-container {
+    display: flex;
+    background-color: DodgerBlue;
+    justify-content: center;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+  }
+
+  #one{
+    order: 1;
+    flex-grow: 10;
+  }
+  #three{
+    order: 3;
+    flex-grow: 1;
+    flex-basis: 500px;
+    flex-shrink: 3;
+  }
+  #two{
+    order: 2;
+    flex-grow: 2;
+  }

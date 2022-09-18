@@ -1,0 +1,36 @@
+@import url('styles/__variables.css');
+@import url('styles/__reset.css');
+@import url('styles/__globals.css');
+@import url('styles/__utilities.css');
+
+
+/* specifics --start */
+header{
+    justify-content: space-between;
+    background-color: var(--secondary);
+    height: 10rem;
+}
+
+.nav > a{
+    margin: 0 2rem
+}
+
+#text-bg{ 
+    color: var(--light); 
+    display: inline-block;
+    background-color: var(--primary); 
+    padding: 11px; 
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 85%); 
+}
+
+section.landing div{
+    flex-basis: 48%;
+    padding: 2rem .5rem;
+}
+
+.landing h1{
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
+/* specifics --end */
