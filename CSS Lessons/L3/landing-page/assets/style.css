@@ -1,8 +1,7 @@
 @import url('styles/__variables.css');
 @import url('styles/__reset.css');
 @import url('styles/__globals.css');
-@import url('styles/__utilities.css');
-
+@import url('styles/__mediaQueries.css');
 
 /* specifics --start */
 header{
