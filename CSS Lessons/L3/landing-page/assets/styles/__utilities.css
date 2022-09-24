@@ -1,11 +1,11 @@
 /* utilities --start */
 .m-padding{
-    padding: 0 12rem;
+    padding-left: 8vw;
+    padding-right: 8vw;
 }
 
 .row {
     display: flex;
-    align-items: center;
     flex-wrap: wrap;
 }
 
@@ -58,6 +58,14 @@
 .active:hover {
     border-bottom: 3px solid var(--primary);
     transition: all 6s;
+}
+
+.flex-top{
+    align-items: flex-start;
+}
+
+.flex-center{
+    align-items: center;
 }
 
 /* utilities --end */

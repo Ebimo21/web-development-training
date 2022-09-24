@@ -22,7 +22,7 @@ header{
     clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 85%); 
 }
 
-section.landing div{
+section.landing > div{
     flex-basis: 48%;
     padding: 2rem .5rem;
 }
@@ -32,4 +32,45 @@ section.landing div{
     font-weight: 600;
 }
 
+#icon-section > div > p{
+    flex-basis: 80%;
+    font-size: 1.2vw;
+}
+
+.flex-45 > img{
+
+}
+
+#icon-section {
+    padding: 2rem .5rem;
+
+}
+
+footer{
+    background-color: var(--primary);
+    color: var(--light);
+    display: flex;
+    gap:50px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+footer a, footer p, footer span{
+    font-size: 12px;
+}
+
+footer a{
+    display: block;
+    color: var(--light);
+    margin: 15px 0
+}
+
+footer>  div:nth-child(1){
+    flex-basis: 20%;
+}
+
+footer > div:nth-child(2){
+    flex-basis: 60%;
+}
 /* specifics --end */
+

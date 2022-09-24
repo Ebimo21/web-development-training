@@ -3,6 +3,7 @@ const answerEl = document.getElementById('answerEl')
 const labelEl = document.querySelectorAll("#answerEl label")
 const inputEl = document.querySelectorAll("#answerEl input")
 const btnNext = document.getElementById("next")
+const btnPrev = document.getElementById("prev")
 const id = document.getElementById("id")
 const points = document.getElementById("points")
 let data = [
@@ -187,15 +188,14 @@ let qCount = 0
 
 let currentQuestion = 0;
 
+let userAnswer = [];
+
 const user = [{
     score: 0,
 }];
 
 const model = {
     init : ()=>{
-        // if (!localStorage.data) {
-        //     localStorage.data = JSON.stringify(data);
-        // }
         
         if (!localStorage.user) {
             localStorage.user = JSON.stringify(user);
@@ -229,38 +229,71 @@ const octopus = {
 
 const view = {
     init : () =>{
-        
         btnNext.addEventListener("click", view.submit)
+        btnPrev.addEventListener("click", view.prev)
         view.getQuestions(data[currentQuestion])
+    },
+
+    prev : (e)=>{
+        e.preventDefault()
+        if (currentQuestion<1){
+            currentQuestion = currentQuestion
+            
+        }else{
+            --currentQuestion
+        }
+        view.getQuestions(data[currentQuestion])
+    },
+
+    anyalyse : () =>{
         
+
+        for(let i=0; i<userAnswer.length; i++){
+            if(userAnswer[i] == data[i].answer){
+                model.modifyUserScore();  
+            }
+        }
+
+        let score = JSON.parse(localStorage.user);
+        alert("Your score: " + score[0].score)
+
     },
 
     submit : (e)=>{
         e.preventDefault()
         qCount++;
 
-        let el = document.getElementsByTagName("input");
-        for (i=0; i<el.length; i++){
-            if (el[i].type ="radio"){
-                if(qCount>14){
-                    document.getElementById("next").disabled = true
-                }
+        let form = new FormData(answerEl)
 
-                if(el[i].checked){
-                    if (el[i].value == data[currentQuestion].answer){
-                        model.modifyUserScore();  
-                        if(qCount>14){
-                            let score = JSON.parse(localStorage.user);
-                            return alert("Your score: " + score[0].score)
-                        }
+        userAnswer[currentQuestion] = form.get("answer");
 
-                    }
-                }
-            }
+        if(qCount>14){
+            btnNext.disabled = true;
+            btnPrev.disabled = true;
+            view.anyalyse()
         }
+
+        // let el = document.getElementsByTagName("input");
+        // for (i=0; i<el.length; i++){
+        //     if (el[i].type ="radio"){
+        //         if(qCount>14){
+        //             document.getElementById("next").disabled = true
+        //         }
+
+        //         if(el[i].checked){
+        //             if (el[i].value == data[currentQuestion].answer){
+        //                 model.modifyUserScore();  
+        //                 if(qCount>14){
+        //                     let score = JSON.parse(localStorage.user);
+        //                     return alert("Your score: " + score[0].score)
+        //                 }
+
+        //             }
+        //         }
+        //     }
+        // }
         if (currentQuestion<data.length-1){
             ++currentQuestion
-            console.log(currentQuestion)
         }else{
             currentQuestion = currentQuestion
         }
