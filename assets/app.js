@@ -197,9 +197,12 @@ const user = [{
 const model = {
     init : ()=>{
         
-        if (!localStorage.user) {
-            localStorage.user = JSON.stringify(user);
+        if (!sessionStorage.user) {
+            sessionStorage.user = JSON.stringify(user);
         }
+        
+
+        
     },
 
     modifyUserScore : () =>{
@@ -208,11 +211,11 @@ const model = {
             user.score == user.score++;
             return user
         })
-        localStorage.user = JSON.stringify(modifiedUser)
+        sessionStorage.user = JSON.stringify(modifiedUser)
     },
 
     getUser : ()=>{
-        return JSON.parse(localStorage.user)
+        return JSON.parse(sessionStorage.user)
     }
 }
 
@@ -230,6 +233,7 @@ const octopus = {
 const view = {
     init : () =>{
         btnNext.addEventListener("click", view.submit)
+        btnNext.addEventListener("submit", view.submit)
         btnPrev.addEventListener("click", view.prev)
         view.getQuestions(data[currentQuestion])
     },
@@ -254,7 +258,7 @@ const view = {
             }
         }
 
-        let score = JSON.parse(localStorage.user);
+        let score = JSON.parse(sessionStorage.user);
         alert("Your score: " + score[0].score)
 
     },
@@ -284,7 +288,7 @@ const view = {
         //             if (el[i].value == data[currentQuestion].answer){
         //                 model.modifyUserScore();  
         //                 if(qCount>14){
-        //                     let score = JSON.parse(localStorage.user);
+        //                     let score = JSON.parse(sessionStorage.user);
         //                     return alert("Your score: " + score[0].score)
         //                 }
 
@@ -292,6 +296,7 @@ const view = {
         //         }
         //     }
         // }
+        answerEl.reset()
         if (currentQuestion<data.length-1){
             ++currentQuestion
         }else{
@@ -305,7 +310,7 @@ const view = {
         questionEl.innerText = ""
         questionEl.innerText = question.question
         id.innerText = question.id
-        points.innerText = JSON.parse(localStorage.user)[0].score
+        points.innerText = JSON.parse(sessionStorage.user)[0].score
 
         for (i=0; opt.length>i; i++){
             labelEl[i].innerText = opt[i]
