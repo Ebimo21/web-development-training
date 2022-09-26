@@ -10,24 +10,37 @@
 </head>
 <body>
 
-    <h1>Quiz</h1>
+    <main>
+        <h1>Quiz</h1>
     <div id="quizzer">
-        <p>Question: <span id="id"></span></p>
+        <p>Question: <span id="id"></span> <span> of 15</span></p>
         <p>Points: <span id="points"></span></p>
         <h3 id="questionEl"></h3>
         <form id="answerEl">
             
-            <input type="radio" id="a" name="answer" />
-            <label for="a"></label><br>
+            <label class="container" for="a">
+                <label class="label"></label>
+                <input type="radio" id="a" name="answer" />
+                <span class="checkmark"></span>
+            </label>
             
-            <input type="radio" id="b" name="answer" />
-            <label for="b"></label><br>
+            <label class="container" for="b">
+                <label class="label"></label>
+                <input type="radio" id="b" name="answer" />
+                <span class="checkmark"></span>
+            </label>
             
-            <input type="radio" id="c" name="answer" />
-            <label for="c"></label><br>
+            <label class="container" for="c">
+                <label class="label"></label>
+                <input type="radio" id="c" name="answer" />
+                <span class="checkmark"></span>
+            </label>
             
-            <input type="radio" id="d" name="answer" />
-            <label for="d"></label><br>
+            <label class="container" for="d">
+                <label class="label"></label>
+                <input type="radio" id="d" name="answer" />
+                <span class="checkmark"></span>
+            </label>
 
             <input type="button"  id="prev" name="prev" value="Previous" />
             <input type="submit"  id="next" name="next" value="Next" />
@@ -36,5 +49,6 @@
 
 
     </div>
+    </main>
 </body>
 </html>

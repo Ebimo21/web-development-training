@@ -1,11 +1,11 @@
-const questionEl = document.getElementById('questionEl')
-const answerEl = document.getElementById('answerEl')
-const labelEl = document.querySelectorAll("#answerEl label")
-const inputEl = document.querySelectorAll("#answerEl input")
-const btnNext = document.getElementById("next")
-const btnPrev = document.getElementById("prev")
-const id = document.getElementById("id")
-const points = document.getElementById("points")
+const questionEl = document.getElementById('questionEl');
+const answerEl = document.getElementById('answerEl');
+const labelEl = document.querySelectorAll("#answerEl .label");
+const inputEl = document.querySelectorAll("#answerEl input");
+const btnNext = document.getElementById("next");
+const btnPrev = document.getElementById("prev");
+const id = document.getElementById("id");
+const points = document.getElementById("points");
 let data = [
     {
         id: 1,
@@ -55,68 +55,56 @@ let data = [
 
     {
         id: 5,
-        question: "Where is the correct place to insert a JavaScript?",
-        answer: "Both the head and body section",
+        question: "How do we tell Javascript that we are working with a variable ",
+        answer: "let",
         options: [
-            "Both the head and body section",
-            "the head section",
-            "the body section",
-            "the header section"
+            "variable",
+            "create",
+            "let",
+            "constant"
         ]
         
     },
 
     {
         id: 6,
-        question: "What is the correct extension of CSS files?",
-        answer: ".css",
+        question: "Which of these variable names will cause an error",
+        answer: "04data",
         options: [
-            ".scss",
-            ".index",
-            ".css",
-            ".js",
+            "04data",
+            "userAge",
+            "$account",
+            "_count",
 
         ]
     },
 
     {
         id: 7,
-        question: "Where should you put the link tag?",
-        answer: "Between the head tag",
+        question: "Which of these is a compararism operator",
+        answer: ">=",
         options: [
-            "Between the body tag",
-            "Before the html tag",
-            "Between the head tag",
-            "After the closing html tag"
+            ">=",
+            "*",
+            "-",
+            "="
         ]
     },
 
     {
         id: 8,
-        question: "Which of these creates a comment in CSS?",
-        answer: "/* This is a comment */ ",
+        question: "Which of the following is an arithmetic operator",
+        answer: "+",
         options: [
-            "/* This is a comment */ ",
-            "\* This is a comment *\ ",
-            "*\ This is a comment \* ",
-            "*/ This is a comment /*",
+            "+",
+            "#",
+            "...",
+            "&&",
         ]
     },
 
     {
         id: 9,
-        question: "'Display:flex;' is added to which node (element)?",
-        answer: "Parent node",
-        options: [
-            "Child node",
-            "None",
-            "Content node",
-            "Parent node",
-        ]
-    },
-
-    {
-        id: 10,
         question: "'Justify-Content' is added to which node (element)?",
         answer: "Parent node",
         options: [
@@ -128,7 +116,7 @@ let data = [
     },
 
     {
-        id: 11,
+        id: 10,
         question: "'flex-basis' is added to which node (element)?",
         answer: "Child node",
         options: [
@@ -140,7 +128,7 @@ let data = [
     },
 
     {
-        id: 12,
+        id: 11,
         question: "'Align-content' is added to which node (element)?",
         answer: "Parent node",
         options: [
@@ -152,43 +140,55 @@ let data = [
     },
 
     {
-        id: 13,
-        question: "'div p' - selects which elements ",
-        answer: "All p elements inside a div element",
+        id: 12,
+        question: "Which of the following options declares a variable called 'varName'",
+        answer: "let varName",
         options: [
-            "All div and p elements",
-            "All p elements that are direct children of a div",
-            "All p elements inside a div element",
-            "All p elements"
+            "let varname",
+            "declare varName",
+            "let varName",
+            "varName = 'Hello World'",
+        ]
+    },
+
+    {
+        id: 13,
+        question: "Which of these is not a JavaScript datatype?",
+        answer: "integer",
+        options: [
+            "string",
+            "number",
+            "object",
+            "integer"
         ]
     },
 
     {
         id: 14,
-        question: "'div > p' - selects which elements",
-        answer: "All p elements that are direct children of a div",
+        question: "What does the expression (5 == '5') evaluate to?",
+        answer: "true",
         options: [
-            "All div and p elements",
-            "All p elements that are direct children of a div",
-            "All p elements inside a div element",
-            "All p elements"
+            "true",
+            "false",
+            "undefined",
+            "null",
         ]
-    },
+    }, 
 
     {
         id: 15,
-        question: "'#div > p' - selects which elements",
-        answer: "All p elements that are direct children of a the element with an id of div",
+        question: "Given that userName = 'name', What does the expressions (name != userName), and (userName == 'name') evaluates to?",
+        answer: "true, true",
         options: [
-            "All p elements that are direct children of a the element with an id of div",
-            "All p elements that are direct children of a div element",
-            "All p elements inside a div element element with an id of div",
-            "All p elements that are direct children of a div"
+            "true, false",
+            "false, true",
+            "true, true",
+            "false, false",
         ]
     }, 
 ];
 
-let qCount = 0
+let qCount = 0;
 
 let currentQuestion = 0;
 
@@ -199,34 +199,34 @@ const user = [{
 }];
 
 const model = {
-    init : ()=>{
-        
+    init : ()=>{ 
         if (!sessionStorage.user) {
             sessionStorage.user = JSON.stringify(user);
-        }
-        
-
-        
+        }        
     },
 
-    modifyUserScore : () =>{
-        const user = octopus.getUser()
-        const modifiedUser = user.map((user)=>  {
+    addUserScore : () =>{
+        const user = octopus.getUser();
+        const modifiedUserScore = user.map((user)=>  {
             user.score == user.score++;
-            return user
+            return user;
         })
-        sessionStorage.user = JSON.stringify(modifiedUser)
+        model.updateUserScore(modifiedUserScore);
+    },
+
+    updateUserScore: (user)=>{
+        sessionStorage.user = JSON.stringify(user);
     },
 
     getUser : ()=>{
-        return JSON.parse(sessionStorage.user)
+        return JSON.parse(sessionStorage.user);
     }
 }
 
 const octopus = {
     init : ()=>{
-        model.init()
-        view.init()
+        model.init();
+        view.init();
     },
 
     getUser: ()=>{
@@ -236,98 +236,76 @@ const octopus = {
 
 const view = {
     init : () =>{
-        btnNext.addEventListener("click", view.submit)
-        btnNext.addEventListener("submit", view.submit)
-        btnPrev.addEventListener("click", view.prev)
-        view.getQuestions(data[currentQuestion])
+        btnNext.addEventListener("click", view.submit);
+        btnNext.addEventListener("submit", view.submit);
+        btnPrev.addEventListener("click", view.prev);
+        view.getQuestions(data[currentQuestion]);
     },
 
     prev : (e)=>{
         e.preventDefault()
         if (currentQuestion<1){
-            currentQuestion = currentQuestion
+            currentQuestion = currentQuestion;
             
         }else{
-            --currentQuestion
+            --currentQuestion;
         }
-        view.getQuestions(data[currentQuestion])
+        view.getQuestions(data[currentQuestion]);
     },
 
     anyalyse : () =>{
-        
-
         for(let i=0; i<userAnswer.length; i++){
             if(userAnswer[i] == data[i].answer){
-                model.modifyUserScore();  
+                model.addUserScore();  
             }
         }
 
         let score = JSON.parse(sessionStorage.user);
-        alert("Your score: " + score[0].score)
-
+        alert("Your score: " + score[0].score);
     },
 
     submit : (e)=>{
-        e.preventDefault()
+        e.preventDefault();
         qCount++;
 
-        let form = new FormData(answerEl)
+        let form = new FormData(answerEl);
 
         userAnswer[currentQuestion] = form.get("answer");
 
         if(qCount>14){
             btnNext.disabled = true;
             btnPrev.disabled = true;
-            view.anyalyse()
+            view.anyalyse();
         }
 
-        // let el = document.getElementsByTagName("input");
-        // for (i=0; i<el.length; i++){
-        //     if (el[i].type ="radio"){
-        //         if(qCount>14){
-        //             document.getElementById("next").disabled = true
-        //         }
+        answerEl.reset();
 
-        //         if(el[i].checked){
-        //             if (el[i].value == data[currentQuestion].answer){
-        //                 model.modifyUserScore();  
-        //                 if(qCount>14){
-        //                     let score = JSON.parse(sessionStorage.user);
-        //                     return alert("Your score: " + score[0].score)
-        //                 }
-
-        //             }
-        //         }
-        //     }
-        // }
-        answerEl.reset()
         if (currentQuestion<data.length-1){
-            ++currentQuestion
+            ++currentQuestion;
         }else{
-            currentQuestion = currentQuestion
+            currentQuestion = currentQuestion;
         }
-        view.getQuestions(data[currentQuestion])
-        },
+
+        view.getQuestions(data[currentQuestion]);
+    },
 
     render : (question)=>{
-        let opt = question.options
-        questionEl.innerText = ""
-        questionEl.innerText = question.question
-        id.innerText = question.id
-        points.innerText = JSON.parse(sessionStorage.user)[0].score
+        let opt = question.options;
+        questionEl.innerText = "";
+        questionEl.innerText = question.question;
+        id.innerText = question.id;
+        points.innerText = JSON.parse(sessionStorage.user)[0].score;
 
         for (i=0; opt.length>i; i++){
-            labelEl[i].innerText = opt[i]
-            inputEl[i].value = opt[i]
+            labelEl[i].innerText = opt[i];
+            inputEl[i].value = opt[i];
         }
     },
 
     getQuestions : (question) =>{
-        view.render(question)
-
-        
+        view.render(question);
     }
 }
 
 
-octopus.init()
+octopus.init();
