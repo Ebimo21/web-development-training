@@ -9,55 +9,59 @@ const points = document.getElementById("points")
 let data = [
     {
         id: 1,
-        question : "What is CSS?",
-        answer : "Cascading Style Sheet",
+        question : "Which is correct CSS syntax?",
+        answer : "body {color:black;}",
         options: [
-            "Style Sheet",
-            "Casket Style Sheet ", 
-            "Cascading Style Sheet", 
-            "Styling"],
+            "{ body; color=black;}",
+            "body: color= black", 
+            "body {color:black;}", 
+            "(body color is black) "],
     },
 
     {
         id: 2,
-        question: "If some properties have been defined for the same selector (element) in different style sheets",
-        answer: "The value from the last read style sheet will be used",
-        options: ["The default will be used", "None will be used", "The value of the first read will be used", "The value from the last read style sheet will be used"]
+        question: "Select the code below that uses CSS to configure a background color of #000000 for a web page.",
+        answer: "body { background-color: #000000; }",
+        options: [
+            "body { background-color: #000000; }",
+            "body { bgcolor: #000000; }", 
+            "document { background­-page: #000000; }", 
+            "None of these"]
     },
 
     {
         id: 3,
-        question: "Which is the correct syntax",
-        answer: '<link href="assets/style.css" type="text/css" rel="stylesheet" />',
+        question: "Which line of code correctly places a gif image named 'tiger' into a webpage?",
+        answer: '<img src="tiger.gif" alt="BengalTiger" />',
         options: [
-            '<link href="assets/style.css" rel="stylesheet" />',
-            '<link href="assets/style.css" type="text/css" />',
-            '<link href="assets/style.css" type="text/css" rel="stylesheet" />',
-            'Hard to tell'
+            '<img src="tiger" alt="BengalTiger" />',
+            '<img gif=tiger alt="BengalTiger">',
+            '<image source="tiger.gif" alt=BengalTiger" />',
+            '<img src="tiger.gif" alt="BengalTiger" />'
         ]
     },
 
     {
         id: 4,
-        question: 'Which is not a unit in CSS',
-        answer: "MB",
+        question: 'If you want to have more than one property for a CSS selector, what character separates them?',
+        answer: "semi-colon (;)",
         options: [
-            "PX",
-            "MB",
-            "VH",
-            "REM"
+            "comma (,)",
+            "semi-colon (;)",
+            "colon (:)",
+            "dash (-)"
         ]
     },
 
     {
         id: 5,
-        question: "CSS color property is used to set the _?",
-        answer: "text color",
+        question: "Where is the correct place to insert a JavaScript?",
+        answer: "Both the head and body section",
         options: [
-            "background color",
-            "image filter color",
-            "text color",
-            "shadow color"
+            "Both the head and body section",
+            "the head section",
+            "the body section",
+            "the header section"
         ]
         
     },
