@@ -188,8 +188,6 @@ let data = [
     }, 
 ];
 
-let qCount = 0;
-
 let currentQuestion = 0;
 
 let userAnswer = [];
@@ -266,13 +264,12 @@ const view = {
 
     submit : (e)=>{
         e.preventDefault();
-        qCount++;
 
         let form = new FormData(answerEl);
 
         userAnswer[currentQuestion] = form.get("answer");
 
-        if(qCount>14){
+        if(currentQuestion>14){
             btnNext.disabled = true;
             btnPrev.disabled = true;
             view.anyalyse();
