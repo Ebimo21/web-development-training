@@ -11,6 +11,7 @@ let data = [
         id: 1,
         question : "Which is correct CSS syntax?",
         answer : "body {color:black;}",
+        checked: -1,
         options: [
             "{ body; color=black;}",
             "body: color= black", 
@@ -22,6 +23,7 @@ let data = [
         id: 2,
         question: "Select the code below that uses CSS to configure a background color of #000000 for a web page.",
         answer: "body { background-color: #000000; }",
+        checked: -1,
         options: [
             "body { background-color: #000000; }",
             "body { bgcolor: #000000; }", 
@@ -33,6 +35,7 @@ let data = [
         id: 3,
         question: "Which line of code correctly places a gif image named 'tiger' into a webpage?",
         answer: '<img src="tiger.gif" alt="BengalTiger" />',
+        checked: -1,
         options: [
             '<img src="tiger" alt="BengalTiger" />',
             '<img gif=tiger alt="BengalTiger">',
@@ -45,6 +48,7 @@ let data = [
         id: 4,
         question: 'If you want to have more than one property for a CSS selector, what character separates them?',
         answer: "semi-colon (;)",
+        checked: -1,
         options: [
             "comma (,)",
             "semi-colon (;)",
@@ -57,6 +61,7 @@ let data = [
         id: 5,
         question: "How do we tell Javascript that we are working with a variable ",
         answer: "let",
+        checked: -1,
         options: [
             "variable",
             "create",
@@ -70,6 +75,7 @@ let data = [
         id: 6,
         question: "Which of these variable names will cause an error",
         answer: "04data",
+        checked: -1,
         options: [
             "04data",
             "userAge",
@@ -83,6 +89,7 @@ let data = [
         id: 7,
         question: "Which of these is a compararism operator",
         answer: ">=",
+        checked: -1,
         options: [
             ">=",
             "*",
@@ -95,6 +102,7 @@ let data = [
         id: 8,
         question: "Which of the following is an arithmetic operator",
         answer: "+",
+        checked: -1,
         options: [
             "+",
             "#",
@@ -107,6 +115,7 @@ let data = [
         id: 9,
         question: "'Justify-Content' is added to which node (element)?",
         answer: "Parent node",
+        checked: -1,
         options: [
             "Parent node",
             "None",
@@ -119,6 +128,7 @@ let data = [
         id: 10,
         question: "'flex-basis' is added to which node (element)?",
         answer: "Child node",
+        checked: -1,
         options: [
             "Content node",
             "Parent node",
@@ -131,6 +141,7 @@ let data = [
         id: 11,
         question: "'Align-content' is added to which node (element)?",
         answer: "Parent node",
+        checked: -1,
         options: [
             "Content node",
             "Parent node",
@@ -143,6 +154,7 @@ let data = [
         id: 12,
         question: "Which of the following options declares a variable called 'varName'",
         answer: "let varName",
+        checked: -1,
         options: [
             "let varname",
             "declare varName",
@@ -155,6 +167,7 @@ let data = [
         id: 13,
         question: "Which of these is not a JavaScript datatype?",
         answer: "integer",
+        checked: -1,
         options: [
             "string",
             "number",
@@ -167,6 +180,7 @@ let data = [
         id: 14,
         question: "What does the expression (5 == '5') evaluate to?",
         answer: "true",
+        checked: -1,
         options: [
             "true",
             "false",
@@ -179,6 +193,7 @@ let data = [
         id: 15,
         question: "Given that userName = 'name', What does the expressions (name != userName), and (userName == 'name') evaluates to?",
         answer: "true, true",
+        checked: -1,
         options: [
             "true, false",
             "false, true",
@@ -264,13 +279,21 @@ const view = {
 
     submit : (e)=>{
         e.preventDefault();
+        const inp = document.getElementsByTagName("input")
 
         let form = new FormData(answerEl);
 
         userAnswer[currentQuestion] =  form.get("answer") != undefined ? form.get("answer") : userAnswer[currentQuestion] ;
-        console.log(userAnswer)
 
-        if(currentQuestion>14){
+        for (let i=0; i<inputEl.length; i++){
+            if(inputEl[i].checked){
+                data[currentQuestion].checked = inputEl[i].dataset.opt
+
+            }
+        }
+        console.log(data.length)
+
+        if(currentQuestion>13){
             btnNext.disabled = true;
             btnPrev.disabled = true;
             view.anyalyse();
@@ -297,6 +320,10 @@ const view = {
         for (i=0; opt.length>i; i++){
             labelEl[i].innerText = opt[i];
             inputEl[i].value = opt[i];
+        }
+
+        if(inputEl[question.checked] != undefined){
+            inputEl[question.checked].checked = true
         }
     },
 
