@@ -267,7 +267,8 @@ const view = {
 
         let form = new FormData(answerEl);
 
-        userAnswer[currentQuestion] = form.get("answer");
+        userAnswer[currentQuestion] =  form.get("answer") != undefined ? form.get("answer") : userAnswer[currentQuestion] ;
+        console.log(userAnswer)
 
         if(currentQuestion>14){
             btnNext.disabled = true;
