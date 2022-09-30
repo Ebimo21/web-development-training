@@ -273,6 +273,7 @@ const view = {
             }
         }
 
+        points.innerText = JSON.parse(sessionStorage.user)[0].score;
         let score = JSON.parse(sessionStorage.user);
         alert("Your score: " + score[0].score);
     },
@@ -291,7 +292,6 @@ const view = {
 
             }
         }
-        console.log(data.length)
 
         if(currentQuestion>13){
             btnNext.disabled = true;
@@ -315,7 +315,6 @@ const view = {
         questionEl.innerText = "";
         questionEl.innerText = question.question;
         id.innerText = question.id;
-        points.innerText = JSON.parse(sessionStorage.user)[0].score;
 
         for (i=0; opt.length>i; i++){
             labelEl[i].innerText = opt[i];
