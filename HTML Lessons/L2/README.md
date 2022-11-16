@@ -317,7 +317,8 @@ You should include the following <meta> element in all your web pages:
 The `<script>` element is used to define client-side JavaScripts.
  
 ## HTML Semantic Elements
-Semantic elements = elements with a meaning. A semantic element clearly describes its meaning to both the browser and the developer.
+Semantic elements = elements with a meaning. A semantic element clearly describes its meaning to both the browser and the developer. They increase accessibility,  improve SEO, improve code structure and make code more readable for both humans and machine.
+
 Examples of non-semantic elements: `<div>` and `<span>` - Tells nothing about its content.
 Examples of semantic elements: `<form>`, `<table>`, and `<article>` - Clearly defines its content.
 List of Semantic Elements

@@ -1,6 +1,9 @@
-function runapp(){
-  let firstNumber = prompt("Enter first number: ")
-  let secondNumber = prompt("Enter second number: ")
-  let sum = parseInt(firstNumber) + parseInt(secondNumber)
-  alert(sum)
+let root = document.getElementById('root');
+let input = document.getElementById('input')
+
+function get(){
+  let userInput = input.value
+  let el = document.createElement("li")
+  el.innerText = userInput
+  root.append(el)
 }

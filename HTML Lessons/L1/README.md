@@ -1,17 +1,35 @@
 # HYPERTEXT MARKUP LANGUAGE (HTML)
 ## What is HTML
-HTML is the standard markup language for Web pages. HTML stands for Hyper Text Markup Language. HTML consists of a series of elements
+HTML is the standard markup language for Web pages. HTML stands for **`Hyper Text Markup Language`**. HTML consists of a series of elements, which you use to enclose, or wrap, different parts of the content to make it appear a certain way, or act a certain way.
+
+**Hyper Text:** Whenever you click on a link which brings you to a new webpage, you have clicked on a hypertext. HyperText is a way to link two or more web pages (HTML documents) with each other.
+
+**Markup language:** A markup language is a computer language that is used to apply layout and formatting conventions to a text document. Markup language makes text more interactive and dynamic. It can turn text into images, tables, links, etc.
 
 ## What is HTML used for?
 - HTML is used to describe the structure of a Web page
 - HTML elements tell the browser how to display the content
-- HTML elements label pieces of content such as "this is a heading", "this is a paragraph", "this is a link", etc.
 
 ## HTML History
-Since the early days of the World Wide Web, there have been many versions of HTML:
+In the late __1980's__ , a physicist, **Tim Berners-Lee** who was a contractor at __CERN__, proposed a system for CERN researchers. In __1989__, he wrote a memo proposing an internet based hypertext system.
+
+Tim Berners-Lee is known as the father of HTML. The first available description of HTML was a document called "HTML Tags" proposed by Tim in late 1991. The latest version of HTML is HTML5, which we will learn later in this tutorial.
+
+### HTML Versions
+**HTML 1.0:** HTML 1.0(1991) was the barebones version of HTML language.
+
+**HTML 2.0:** HTML 2.0(1995) was able to support extra features such as form-based file upload, form elements such as text box, option button, etc.
+
+**HTML 3.2:** HTML 3.2(1997)  was capable of creating tables and providing support for extra options for form elements. It can also support a web page with complex mathematical equations. It became an official standard for any browser till January 1997. Today it is practically supported by most of the browsers.
+
+**HTML 4.01:** HTML 4.01(1999) is a very stable version of HTML language. This version is the current official standard, and it provides added support for stylesheets (CSS) and scripting ability for various multimedia elements.
+
+**HTML5:** HTML5(2008) is the newest version of HyperText Markup language. There are two major organizations one is W3C (World Wide Web Consortium), and another one is WHATWG( Web Hypertext Application Technology Working Group) which are involved in the development of HTML 5 version, and still, it is under development.
 
 ## How the Web Works
 Webpages/Websites are just a bunch of text files and media content sitting on a special computer (server) that we can access once connecting to the same network (internet) as the special computer.
+
+`Note:` It’s also worth noting that HTML is not considered a programming language as it can’t create dynamic functionality.
 
 ## How to Make a Website
 - Create files written in HTML
@@ -48,7 +66,7 @@ Webpages/Websites are just a bunch of text files and media content sitting on a 
 ## Code Explained!
 ``` html 
 The <!DOCTYPE html> declaration defines that this document is an HTML5 document
-The <html> element is the root element of an HTML page
+The <html> element is the <strong>root</strong> element of an HTML page. It can also include the <strong>lang</strong> attribute, setting the primary language of the document.
 The <head> element contains meta information about the HTML page
 The <title> element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab)
 The <body> element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
@@ -65,7 +83,7 @@ The <p> element defines a paragraph
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Learning HTML</title>
 </head>
 <body>
     <h1>My First HTML document!</h1>
@@ -83,10 +101,10 @@ A browser does not display the HTML tags, but uses them to determine how to disp
 ## How to View HTML Source?
 Have you ever seen a Web page and wondered "Hey! How did they do that?"
 
-## View HTML Source Code:
-Right-click in an HTML page and select "View Page Source" (in Chrome) or "View Source" (in Edge), or similar in other browsers. This will open a window containing the HTML source code of the page.
+### View HTML Source Code:
+Right-click in an HTML page and select `View Page Source` (in Chrome) or `View Source` (in Edge), or similar in other browsers. This will open a window containing the HTML source code of the page.
 
-## Inspect an HTML Element:
+### Inspect an HTML Element:
 - Right-click on an element (or a blank area)
 - Choose "Inspect" or "Inspect Element" to see what elements are made up of (you will see both the HTML and the CSS).
 `You can also edit the HTML or CSS on-the-fly in the Elements or Styles panel that opens.`
@@ -130,7 +148,7 @@ For Example:
 The `<a>` tag defines a hyperlink. The `href` attribute specifies the URL of the page the link goes to:
 
 ``` html
-<a href="https://www.w3schools.com">Visit W3Schools</a>
+<a href="https://www.google.com">Visit Gooogle</a>
 ```
 
 ## List of common Attributes:
@@ -194,7 +212,7 @@ The HTML standard does not require lowercase tags, but W3C recommends lowercase 
 `OPTIONAL`: Read about the `Upcoming section`
 
 # NEXT LECTURE: UPCOMING
-## List of important Elements that we will be covering:
+## List of important Elements and we will be covering:
 
 ``` html 
 <h1> - <h6>
